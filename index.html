@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clothes Store</title>
+    <meta name="description" content="This is the description" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" async></script>
+  </head>
+  <body>
+    <section class="container content-section">
+      <h2 class="section-header"></h2>
+      <div class="shop-items">
+        <div class="shop-item">
+          <span class="shop-item-title" id="title-1"></span>
+          <img class="shop-item-image" id="img-1" />
+          <div class="shop-item-details">
+            <span class="shop-item-desc" id="desc-1"></span>
+          </div>
+          <span class="shop-item-price" id="price-1"></span>
+          <button class="btn btn-primary shop-item-button-1" type="button">
+            ADD TO CART
+          </button>
+        </div>
+        <div class="shop-item">
+          <span class="shop-item-title" id="title-2"></span>
+          <img class="shop-item-image" id="img-2" />
+          <div class="shop-item-details">
+            <span class="shop-item-desc" id="desc-2"></span>
+          </div>
+          <span class="shop-item-price" id="price-2"></span>
+          <button class="btn btn-primary shop-item-button-2" type="button">
+            ADD TO CART
+          </button>
+        </div>
+        <div class="shop-item">
+          <span class="shop-item-title" id="title-3"></span>
+          <img class="shop-item-image" id="img-3" />
+          <div class="shop-item-details">
+            <span class="shop-item-desc" id="desc-3"></span>
+          </div>
+          <span class="shop-item-price" id="price-3"></span>
+          <button class="btn btn-primary shop-item-button-3" type="button">
+            ADD TO CART
+          </button>
+        </div>
+        <div class="shop-item">
+          <span class="shop-item-title" id="title-4"></span>
+          <img class="shop-item-image" id="img-4" />
+          <div class="shop-item-details">
+            <span class="shop-item-desc" id="desc-4"></span>
+          </div>
+          <span class="shop-item-price" id="price-4"></span>
+          <button class="btn btn-primary shop-item-button-4" type="button">
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container content-section">
+      <h2 class="section-header">CART</h2>
+      <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">$0</span>
+      </div>
+      <form name="myForm">
+        <label>Name: </label>
+        <input type="text" name="fName" id="nameText" />
+        <br />
+        <label>Number: </label>
+        <input type="text" name="fNumber" id="numberText" />
+        <br />
+        <label>Mail: </label>
+        <input type="text" name="fMail" id="mailText" />
+        <br />
+        <label>Adress: </label>
+        <input type="text" name="fAdress" id="adressText" />
+        <input
+          type="button"
+          name="fButton"
+          class="btn btn-primary btn-purchase"
+          value="PURCHASE"
+          onclick="return validateForm()"
+        />
+      </form>
+    </section>
+  </body>
+</html>
