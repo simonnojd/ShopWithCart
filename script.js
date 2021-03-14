@@ -4,7 +4,7 @@ getProducts()
 ready()
 
 function getProducts() {
-  fetch('https://fakestoreapi.com/products')
+  fetch("https://fakestoreapi.com/products")
             .then(res=>res.json())
             .then(data=>data.forEach(e => {
               products.push(e)
@@ -44,42 +44,39 @@ function ready() {
   }
 
   // Kopplar en input med kvantitet av en produkt
-  var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+  var quantityInputs = document.getElementsByClassName("cart-quantity-input")
   for (var i = 0; i < quantityInputs.length; i++) {
       var input = quantityInputs[i]
-      input.addEventListener('change', quantityChanged)
+      input.addEventListener("change", quantityChanged)
   }
 
   // Kopplar knapp 1 till produkt 1 att den ska läggas till i carten
-  var addToCartButtons1 = document.getElementsByClassName('shop-item-button-1')
+  var addToCartButtons1 = document.getElementsByClassName("shop-item-button-1")
   for (var i = 0; i < addToCartButtons1.length; i++) {
       var button = addToCartButtons1[i]
-      button.addEventListener('click', addToCartClicked1)
+      button.addEventListener("click", addToCartClicked1)
   }
 
   // Kopplar knapp 2 till produkt 2 att den ska läggas till i carten
-  var addToCartButtons2 = document.getElementsByClassName('shop-item-button-2')
+  var addToCartButtons2 = document.getElementsByClassName("shop-item-button-2")
   for (var i = 0; i < addToCartButtons2.length; i++) {
       var button = addToCartButtons2[i]
-      button.addEventListener('click', addToCartClicked2)
+      button.addEventListener("click", addToCartClicked2)
   }
 
   // Kopplar knapp 3 till produkt 3 att den ska läggas till i carten
-  var addToCartButtons3 = document.getElementsByClassName('shop-item-button-3')
+  var addToCartButtons3 = document.getElementsByClassName("shop-item-button-3")
   for (var i = 0; i < addToCartButtons3.length; i++) {
       var button = addToCartButtons3[i]
-      button.addEventListener('click', addToCartClicked3)
+      button.addEventListener("click", addToCartClicked3)
   }
 
   // Kopplar knapp 4 till produkt 4 att den ska läggas till i carten
-  var addToCartButtons4 = document.getElementsByClassName('shop-item-button-4')
+  var addToCartButtons4 = document.getElementsByClassName("shop-item-button-4")
   for (var i = 0; i < addToCartButtons4.length; i++) {
       var button = addToCartButtons4[i]
-      button.addEventListener('click', addToCartClicked4)
+      button.addEventListener("click", addToCartClicked4)
   }
-
-  // Kopplar purchase knappen med validateForm() funktionen som kollar att man har fyllt i alla fält
-  document.getElementsByClassName('btn-purchase')[0].addEventListener('click', validateForm())
 }
 
 
@@ -103,9 +100,9 @@ function quantityChanged(event) {
 function addToCartClicked1(event) {
   var button = event.target
   var shopItem = button.parentElement.parentElement
-  var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-  var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-  var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+  var title = shopItem.getElementsByClassName("shop-item-title")[0].innerText
+  var price = shopItem.getElementsByClassName("shop-item-price")[0].innerText
+  var imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src
   addItemToCart(title, price, imageSrc)
   updateCartTotal()
 }
@@ -114,9 +111,9 @@ function addToCartClicked1(event) {
 function addToCartClicked2(event) {
   var button = event.target
   var shopItem = button.parentElement.parentElement
-  var title = shopItem.getElementsByClassName('shop-item-title')[1].innerText
-  var price = shopItem.getElementsByClassName('shop-item-price')[1].innerText
-  var imageSrc = shopItem.getElementsByClassName('shop-item-image')[1].src
+  var title = shopItem.getElementsByClassName("shop-item-title")[1].innerText
+  var price = shopItem.getElementsByClassName("shop-item-price")[1].innerText
+  var imageSrc = shopItem.getElementsByClassName("shop-item-image")[1].src
   addItemToCart(title, price, imageSrc)
   updateCartTotal()
 }
@@ -125,9 +122,9 @@ function addToCartClicked2(event) {
 function addToCartClicked3(event) {
   var button = event.target
   var shopItem = button.parentElement.parentElement
-  var title = shopItem.getElementsByClassName('shop-item-title')[2].innerText
-  var price = shopItem.getElementsByClassName('shop-item-price')[2].innerText
-  var imageSrc = shopItem.getElementsByClassName('shop-item-image')[2].src
+  var title = shopItem.getElementsByClassName("shop-item-title")[2].innerText
+  var price = shopItem.getElementsByClassName("shop-item-price")[2].innerText
+  var imageSrc = shopItem.getElementsByClassName("shop-item-image")[2].src
   addItemToCart(title, price, imageSrc)
   updateCartTotal()
 }
@@ -136,22 +133,22 @@ function addToCartClicked3(event) {
 function addToCartClicked4(event) {
   var button = event.target
   var shopItem = button.parentElement.parentElement
-  var title = shopItem.getElementsByClassName('shop-item-title')[3].innerText
-  var price = shopItem.getElementsByClassName('shop-item-price')[3].innerText
-  var imageSrc = shopItem.getElementsByClassName('shop-item-image')[3].src
+  var title = shopItem.getElementsByClassName("shop-item-title")[3].innerText
+  var price = shopItem.getElementsByClassName("shop-item-price")[3].innerText
+  var imageSrc = shopItem.getElementsByClassName("shop-item-image")[3].src
   addItemToCart(title, price, imageSrc)
   updateCartTotal()
 }
 
-// Skapas en div och skickar in titeln, priset och bilden sen kopplar ihop knappar till diven
+// Skapar en div och skickar in titeln, priset och bilden sen kopplar ihop knappar till diven
 function addItemToCart(title, price, imageSrc) {
-  var cartRow = document.createElement('div')
-  cartRow.classList.add('cart-row')
-  var cartItems = document.getElementsByClassName('cart-items')[0]
-  var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+  var cartRow = document.createElement("div")
+  cartRow.classList.add("cart-row")
+  var cartItems = document.getElementsByClassName("cart-items")[0]
+  var cartItemNames = cartItems.getElementsByClassName("cart-item-title")
   for (var i = 0; i < cartItemNames.length; i++) {
       if (cartItemNames[i].innerText == title) {
-          alert('This item is already added to the cart')
+          alert("Denna produkt ligger redan i varukorgen.")
           return
       }
   }
@@ -163,29 +160,29 @@ function addItemToCart(title, price, imageSrc) {
       <span class="cart-price cart-column">${price}</span>
       <div class="cart-quantity cart-column">
           <input class="cart-quantity-input" type="number" value="1">
-          <button class="btn btn-danger" type="button">REMOVE</button>
+          <button class="btn btn-danger" type="button">Ta Bort</button>
       </div>`
   cartRow.innerHTML = cartRowContents
   cartItems.append(cartRow)
-  cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+  cartRow.getElementsByClassName("btn-danger")[0].addEventListener("click", removeCartItem)
+  cartRow.getElementsByClassName("cart-quantity-input")[0].addEventListener("change", quantityChanged)
 }
 
 // Uppdaterar prisen beroende på kvanitet och olika produkter
 function updateCartTotal() {
-  var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-  var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+  var cartItemContainer = document.getElementsByClassName("cart-items")[0]
+  var cartRows = cartItemContainer.getElementsByClassName("cart-row")
   var total = 0
   for (var i = 0; i < cartRows.length; i++) {
       var cartRow = cartRows[i]
-      var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-      var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-      var price = parseFloat(priceElement.innerText.replace('$', ''))
+      var priceElement = cartRow.getElementsByClassName("cart-price")[0]
+      var quantityElement = cartRow.getElementsByClassName("cart-quantity-input")[0]
+      var price = parseFloat(priceElement.innerText.replace("$", ""))
       var quantity = quantityElement.value
       total = total + (price * quantity)
   }
   total = Math.round(total * 100) / 100
-  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+  document.getElementsByClassName("cart-total-price")[0].innerText = "$" + total
 }
 
 // Kollar att alla fält är ifyllda
@@ -195,10 +192,10 @@ function validateForm() {
   var z = document.forms["myForm"]["fMail"].value;
   var v = document.forms["myForm"]["fAdress"].value;
   if (x == "" || y == "" || z == "" || v == "") {
-    alert("All fields must be written")
+    alert("Alla fält måste vara ifyllda, försök igen.")
     return false
   } else {
-    alert('Thank you for your purchase')
+    alert("Tack för din beställning!")
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
       cartItems.removeChild(cartItems.firstChild)
