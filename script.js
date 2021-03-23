@@ -3,8 +3,9 @@ const products = []
 getProducts()
 ready()
 
+
 function getProducts() {
-  fetch("https://fakestoreapi.com/products")
+  fetch("http://webacademy.se/fakestore/")
             .then(res=>res.json())
             .then(data=>data.forEach(e => {
               products.push(e)
@@ -12,27 +13,14 @@ function getProducts() {
             .then(products=>productRender(products))
 }
 
-// Skapar element och lägger in datan från produkt-arrayen
+// Uppdaterar element med data från produkt-arrayen
 function productRender() {
-  document.getElementById("title-1").innerHTML = products[0].title
-  document.getElementById("img-1").src = products[0].image
-  document.getElementById("desc-1").innerHTML = products[0].description
-  document.getElementById("price-1").innerHTML = products[0].price + "$"
-
-  document.getElementById("title-2").innerHTML = products[1].title 
-  document.getElementById("img-2").src = products[1].image
-  document.getElementById("desc-2").innerHTML = products[1].description
-  document.getElementById("price-2").innerHTML = products[1].price + "$"
-
-  document.getElementById("title-3").innerHTML = products[2].title;
-  document.getElementById("img-3").src = products[2].image
-  document.getElementById("desc-3").innerHTML = products[2].description
-  document.getElementById("price-3").innerHTML = products[2].price + "$"
-
-  document.getElementById("title-4").innerHTML = products[3].title
-  document.getElementById("img-4").src = products[3].image
-  document.getElementById("desc-4").innerHTML = products[3].description
-  document.getElementById("price-4").innerHTML = products[3].price + "$"
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById("title-" + (i)).innerHTML = products[i-1].title
+    document.getElementById("img-" + (i)).src = products[i-1].image
+    document.getElementById("desc-" + (i)).innerHTML = products[i-1].description
+    document.getElementById("price-" + (i)).innerHTML = products[i-1].price + "$"
+  }
 }
 
 function ready() {

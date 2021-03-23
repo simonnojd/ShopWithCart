@@ -11,7 +11,7 @@
 * {
   box-sizing: border-box;
   font-family: Raleway;
-  color: #777;
+  background-color: whitesmoke;
 }
 
 html,
@@ -81,7 +81,7 @@ body {
 }
 
 .shop-item-image {
-  height: 250px;
+  max-width: 250px;
 }
 
 .shop-item-details {
@@ -220,4 +220,10 @@ body {
 label,
 input {
   margin-top: 3em;
+}
+
+.fButton {
+  margin-left: 180px;
+  margin-bottom: 50px;
+  width: 30%;
 }
